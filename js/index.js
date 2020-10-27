@@ -1,13 +1,17 @@
 // Your code goes here
 const funBus = document.querySelector("h2.go")
-console.log(funBus)
+const logZone = document.querySelector("#log")
+console.log(logZone)
 funBus.onmouseover = overLetsGo;
-funBus.onmouseout = outLetsGo
+funBus.onmouseout = outLetsGo;
+logZone.ondblclick = logDoubleClick;
 function overLetsGo() {
     funBus.classList.add("goUpdated")
     funBus.innerHTML = "Your adventure begins"
-    // funBus.innerHTML = 'The Fun Bus underlined?'
 }
 function outLetsGo() {
     funBus.classList.remove("goUpdated")
+}
+function logDoubleClick(event) {
+    logZone.textContent = `Position: (${event.clientX}, ${event.clientY})`
 }
